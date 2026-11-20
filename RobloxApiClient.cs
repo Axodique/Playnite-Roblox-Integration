@@ -21,7 +21,7 @@ namespace RobloxIntegration
             if (!string.IsNullOrEmpty(robloSecurityCookie))
             {
                 var cookieContainer = new CookieContainer();
-                cookieContainer.Add(new Uri("https://roblox.com"), new Cookie(".ROBLOSECURITY", robloSecurityCookie));
+                cookieContainer.Add(new Cookie(".ROBLOSECURITY", robloSecurityCookie, "/", ".roblox.com"));
                 handler.CookieContainer = cookieContainer;
             }
             client = new HttpClient(handler);
